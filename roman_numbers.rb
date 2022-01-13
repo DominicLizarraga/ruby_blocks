@@ -16,9 +16,9 @@ ROMAN = {
 
 def roman_to_integer(roman_string)
   number = 0
-  string = roman_string
-  until string.length == 0
-    last_two_characters = p string.slice(-2, 2)
+  string = roman_string.dup
+  until string.size.zero?
+    last_two_characters = p string[-2, 2]
     if ROMAN.key?(last_two_characters)
       number += ROMAN[last_two_characters]
       string.chop!
